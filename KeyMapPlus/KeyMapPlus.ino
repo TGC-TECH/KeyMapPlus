@@ -1,4 +1,4 @@
-#include <Keyboard.h>
+
 
 /*  PS2Keyboard library example
   
@@ -28,10 +28,14 @@
 */
    
 #include <PS2Keyboard.h>
+#include <Keyboard.h>
 
 
 const int DataPin = 8; //DONT MODIFY THESE IT WILL BREAK THE SOFTWARE
 const int IRQpin =  1;
+char ctrlKey = KEY_LEFT_CTRL; //defines control key for windows/linux Comment out for mac
+//char ctrlKey = KEY_LEFT_GUI; //Uncomment for mac
+
 
 PS2Keyboard keyboard;
 
@@ -40,6 +44,7 @@ void setup() {
   keyboard.begin(DataPin, IRQpin);
   Serial.begin(9600);
   Serial.println("Keyboard Test:");
+  Keyboard.begin(); //enables HID keyboard
 }
 
 void loop() {
@@ -65,14 +70,32 @@ void loop() {
       Serial.print("[Right]");
     } else if (c == PS2_UPARROW) {
       Serial.print("[Up]");
+      Keyboard.press(ctrlKey);
+      Keyboard.press('n');
+      delay(100); // wait for new window to open:
+      Keyboard.releaseAll(); //release ctrl and n keys
+      
     } else if (c == PS2_DOWNARROW) {
       Serial.print("[Down]");
     } else if (c == PS2_DELETE) {
       Serial.print("[Del]");
+    } else if (c == PS2_F5) {
+      Serial.print("[F5]");
+    } else if (c == PS2_HOME) {
+      Serial.print("[Home]");
+      } else if (c == PS2_BACKSPACE) {
+      Serial.print("[Backspace]");
+      } else if (c == 'a') {
+      Serial.print("a");
+      Keyboard.print("Hello World!");
+       } else if (c == PS2_END) {
+      Serial.print("[END]");
+      
     } else {
       
       // otherwise, just print all normal characters
       Serial.print(c);
+      Keyboard.print(c);
     }
   }
 }
