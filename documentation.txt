@@ -1,0 +1,35 @@
+To use KeyMapPlusConfigTool, begin by entering your shortcut in the text field on the left and your command in the field on the right.
+For instance, let's say you wanted to make pressing "a" have the effect of pressing "b".
+In the field on the left, you would type "a", while in the field on the right, you would type "b".
+Please note that case does not matter.
+You can only enter one key per field. If you want "a" to have the effect of pressing "b" and "c", use the following instructions:
+Bind "a" to "b" as detailed above. Then, press "Add New Keybind", and bind "a" to "c".
+Now, pressing "a" will have the effect of pressing "b", followed immediately by "c".
+If you want to make "a" send the command for "c" followed by "b" instead of "b" followed by "c", simply bind "a" to "c" before you bind it to "b".
+Keybinds don't have to be grouped together. For example, you can bind "a" to "b", "d" to "e", then "a" to "c".
+You can generate your .ino file by pressing "Compile!". The "Uncompiled" text at the top should change to "Successfully compiled!".
+Mac OS uses the command key where other operating systems use the control key.
+If you are using the control key in a keybind, you must check "Compile for Mac" if it will be run on a Mac, and uncheck it otherwise.
+The checkbox will default to the operating system KeyMapPlusConfigTool is being run on.
+To use a special key for KeyMapPlus, refer to the following chart.
+
+           Key | Reference     |
+       Control | CTRL          |
+         Shift | SHIFT         |
+           Alt | ALT           |
+           Tab | TAB           |
+        Escape | ESC           |
+        Return | RTRN          |
+     Caps Lock | CAPS          |
+     Page Down | PGDN          |
+       Page Up | PGUP          |
+    Left Arrow | LEFT          |
+   Right Arrow | RIGHT         |
+      Up Arrow | UP            |
+    Down Arrow | DOWN          |
+     Backspace | BKSP          |
+        Delete | DEL           |
+  Function Key | F# (replace #)|
+          Home | HOME          |
+        Insert | INS           |
+           End | END           |
